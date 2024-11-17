@@ -39,6 +39,7 @@ def a_star(grid, start, end):
             if (0 <= neighbor[0] < len(grid)) and (0 <= neighbor[1] < len(grid[0])) and grid[neighbor[0]][neighbor[1]] != 1:
                 tentative_g_score = g_score[current] + 1  # Every step has a cost of 1
                 
+                # If this path to the neighbor is better, update it
                 if neighbor not in g_score or tentative_g_score < g_score[neighbor]:
                     came_from[neighbor] = current
                     g_score[neighbor] = tentative_g_score
