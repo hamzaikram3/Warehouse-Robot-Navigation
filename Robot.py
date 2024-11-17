@@ -65,16 +65,16 @@ def get_grid_input():
     while True:
         try:
             # Get grid dimensions
-            rows = int(input("Enter the number of rows in the grid: "))
-            cols = int(input("Enter the number of columns in the grid: "))
+            rows = int(input("Number of Rows : "))
+            cols = int(input("Number of Columns : "))
             
             grid = []
-            print("Enter the grid row by row (use 0 for empty space and 1 for obstacle):")
+            print("(use 0 for empty space and 1 for obstacle):")
             
             # Get grid values from the user
             for i in range(rows):
                 while True:
-                    row = input(f"Enter row {i + 1} values (0 or 1, space-separated): ").split()
+                    row = input(f"Row {i + 1} values : ").split()
                     if len(row) == cols and all(val in ['0', '1'] for val in row):
                         grid.append([int(val) for val in row])
                         break
